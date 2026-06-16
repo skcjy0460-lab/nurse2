@@ -467,7 +467,7 @@ if st.button("🤖 AI 컨설팅 보고서 생성", type="primary", use_container
                 
                 if ai_provider == "Gemini (추천)":
                     genai.configure(api_key=gemini_api_key)
-                    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_prompt)
+                    model = genai.GenerativeModel('gemini-3.5-flash', system_instruction=system_prompt)
                     response = model.generate_content(user_prompt, stream=True)
                     for chunk in response:
                         full_report += chunk.text
